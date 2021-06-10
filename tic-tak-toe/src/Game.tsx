@@ -2,14 +2,24 @@ import React from 'react';
 
 import './App.css';
 
-class Square extends React.Component {
-  render() {
-    return (
-        <button className="square">
-          {/* TODO */}
-        </button>
-    );
-  }
+class Square extends React.Component<{}, { value: string }> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            value: '',
+        };
+    }
+
+    render() {
+        return (
+            <button
+                className="square"
+                onClick={() => this.setState({value: 'X'})}
+            >
+                {this.state.value}
+            </button>
+        );
+    }
 }
 
 class Board extends React.Component {
