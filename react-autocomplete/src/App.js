@@ -15,6 +15,10 @@ function App() {
     }
     loadUsers();
   }, [])
+  const onSuggestHandler = (text) => {
+    setText(text);
+    setSuggestions([]);
+  }
   const onChangeHandler = (text) => {
     let matches = []
     if (text.length > 0) {
@@ -32,9 +36,16 @@ function App() {
         <input type="text" className="col-md-12 input" style={{ marginTop: 10 }}
                onChange={e => onChangeHandler(e.target.value)}
                value={text}
+               onBlur={() => {
+                 setTimeout(() => {
+                   setSuggestions([])
+                 }, 100);
+               }}
         />
         {suggestions && suggestions.map((suggestion, i) =>
-            <div key={i} className="suggestion col-md-12 justify-content-md-center">{suggestion.email}</div>
+            <div key={i} className="suggestion col-md-12 justify-content-md-center"
+                 onClick={() => onSuggestHandler(suggestion.email)}
+            >{suggestion.email}</div>
         )}
       </div>
   );
