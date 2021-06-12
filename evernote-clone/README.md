@@ -66,3 +66,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+Project Console: https://console.firebase.google.com/project/evernote-clone-a936c/overview
+Hosting URL: https://evernote-clone-a936c.web.app
