@@ -1,21 +1,21 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
 import {Link} from "react-router-dom";
+import CONST_VARS from "../../const";
 
-const base = 'https://pokeapi.co/api/v2/'
 
 const PokemonPage = (props: any ) => {
     const id = props.match.params.pokemon_id
     const [pokemon, setPokemon] = useState<any>([])
     useEffect(() => {
         (async () => {
-            const res = await axios.get(`${base}pokemon/${id}/`);
+            const res = await axios.get(`${CONST_VARS.BASE_URL}pokemon/${id}/`);
             console.log(res.data)
             setPokemon(res.data)
         })();
 
     }, []);
-    const pokemonAbilitisList =  pokemon.abilities ? (
+    const pokemonAbilitiesList =  pokemon.abilities ? (
         pokemon.abilities.map((a: { ability: any; }) => {
             const {name} = a.ability;
             return (
@@ -25,7 +25,7 @@ const PokemonPage = (props: any ) => {
             );
         })
     ): (<div></div>);
-    const pokemonImage = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+    const pokemonImage = `${CONST_VARS.IMG_URL}${id}.png`
 
     return (
         <div>
@@ -36,7 +36,7 @@ const PokemonPage = (props: any ) => {
                 <div>Height: {pokemon.height}</div>
                 <div>Weight: {pokemon.weight}</div>
                 <p>Abilities</p>
-                {pokemonAbilitisList}
+                {pokemonAbilitiesList}
                 <img src={pokemonImage} alt="pokemon image"/>
             </div>
         </div>

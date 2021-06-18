@@ -1,20 +1,21 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import CONST_VARS from "../../const";
 
-const base = 'https://pokeapi.co/api/v2/'
+interface ISubmitResult {
+    name: string;
+    url: string;
+}
 
 
 const Home = () => {
-    interface ISubmitResult {
-        name: string;
-        url: string;
-    }
+
 
     const [pokemons, setPokemons] = useState<ISubmitResult[]>([])
     useEffect(() => {
         (async () => {
-            const res = await axios.get(`${base}pokemon?limit=10&offset=200`);
+            const res = await axios.get(`${CONST_VARS.BASE_URL}pokemon?limit=10&offset=200`);
             setPokemons(res.data.results)
             console.log(res.data.results)
         })();
@@ -25,8 +26,8 @@ const Home = () => {
         pokemons.map(pokemon => {
             const {name} = pokemon;
             const {url} = pokemon;
-            const id = url.slice(-4, -1);
-            const pokemonImage = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+            const id = ((url.match(/\/\d+\//))?.toString().match(/\d+/)?.toString())
+            const pokemonImage = `${CONST_VARS.IMG_URL}${id}.png`
             return (
                 <Link to={`/pokemon/${id}`}>
                     <div className="pokemon-card" key={id}>
