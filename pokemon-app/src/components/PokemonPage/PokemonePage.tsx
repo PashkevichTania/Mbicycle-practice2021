@@ -3,6 +3,7 @@ import axios from 'axios'
 import {Link} from "react-router-dom";
 import CONST_VARS from "../../const";
 import AbilitiesList from "./AbilitiesList";
+import StatsList from "./StatsList";
 import {IPokemonDetails} from "../../interfaces";
 
 
@@ -17,12 +18,14 @@ const PokemonPage = (props: { match: { params: { pokemon_id: string; }; }; } ) =
 
     }, []);
     const pokemonAbilities = pokemon?.abilities;
-    console.log("pokemonAbilities")
-    console.log(pokemonAbilities)
+    const pokemonStats= pokemon?.stats;
 
     const pokemonAbilitiesList =  pokemonAbilities ?
         (<AbilitiesList abilities={pokemonAbilities}/>):
         (<div>No abilities</div>);
+    const pokemonStatsList =  pokemonStats ?
+        (<StatsList stats={pokemonStats}/>):
+        (<div>No stats</div>);
 
     const pokemonImage = `${CONST_VARS.IMG_URL}${id}.png`
 
@@ -37,6 +40,10 @@ const PokemonPage = (props: { match: { params: { pokemon_id: string; }; }; } ) =
             <div className="abilities">
                 <p>Abilities</p>
                 {pokemonAbilitiesList}
+            </div>
+            <div className="stats">
+                <p>Stats</p>
+                {pokemonStatsList}
             </div>
         </div>
     ): ("Pokemon not found")
