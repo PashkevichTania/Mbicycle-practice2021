@@ -4,6 +4,7 @@ const CONST_VARS = {
 
     HOME_PATH: '/',
     POKEMON_PATH: '/pokemon/:pokemon_id',
+    SEARCH_PATH: '/search/',
 
     NOT_FOUND_PAGE_TEXT: 'Page Not Found',
     NO_POKEMONS_TEXT: 'No pokemons found',
