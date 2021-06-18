@@ -1,5 +1,4 @@
 import React from 'react'
-import CONST_VARS from "../../const";
 
 const Search = () => {
     return (
