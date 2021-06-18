@@ -16,7 +16,7 @@ const Home = () => {
 
     const listMarkup = pokemons.length > 0 ?
         (<PokemonsList pokemons={pokemons}/>) :
-        (<div className="text-center">No pokemons found</div>)
+        (<div className="text-center">{CONST_VARS.NO_POKEMONS_TEXT}</div>)
 
     return (
         <div className="container">

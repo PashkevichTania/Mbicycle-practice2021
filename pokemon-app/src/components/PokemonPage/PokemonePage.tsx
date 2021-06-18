@@ -22,10 +22,10 @@ const PokemonPage = (props: { match: { params: { pokemon_id: string; }; }; } ) =
 
     const pokemonAbilitiesList =  pokemonAbilities ?
         (<AbilitiesList abilities={pokemonAbilities}/>):
-        (<div>No abilities</div>);
+        (<div>{CONST_VARS.NO_ABILITIES_TEXT}</div>);
     const pokemonStatsList =  pokemonStats ?
         (<StatsList stats={pokemonStats}/>):
-        (<div>No stats</div>);
+        (<div>{CONST_VARS.NO_STATS_TEXT}</div>);
 
     const pokemonImage = `${CONST_VARS.IMG_URL}${id}.png`
 
