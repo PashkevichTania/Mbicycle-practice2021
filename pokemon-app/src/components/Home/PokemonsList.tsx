@@ -8,11 +8,12 @@ const PokemonsList = (props: { pokemons: IPokemon[]; }) => {
     const pokemons_list = props.pokemons.map((pokemon) => {
         const {name} = pokemon;
         const {url} = pokemon;
+        // TODO simplify
         const id = ((url.match(/\/\d+\//))?.toString().match(/\d+/)?.toString())
         const pokemonImage = `${CONST_VARS.IMG_URL}${id}.png`
         return (
-            <Link to={`/pokemon/${id}`}>
-                <div className="pokemon-card" key={id}>
+            <Link to={`/pokemon/${id}`}  key={id}>
+                <div className="pokemon-card">
                     <div className="card-body">
                         <img src={pokemonImage} alt="pokemon image"/>
                         <p>ID: {id}</p>

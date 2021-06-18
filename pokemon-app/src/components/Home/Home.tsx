@@ -4,11 +4,19 @@ import CONST_VARS from "../../const";
 import PokemonsList from "./PokemonsList";
 import {IPokemon} from "../../interfaces";
 
+
+let params = {
+    limit: 10,
+    offset: 200,
+}
+//params.limit = Math.floor(Math.random() * 25)
+params.offset = Math.floor(Math.random() * 200)
+
 const Home = () => {
     const [pokemons, setPokemons] = useState<IPokemon[]>([])
     useEffect(() => {
         (async () => {
-            const res = await axios.get(`${CONST_VARS.BASE_URL}pokemon?limit=10&offset=200`);
+            const res = await axios.get(`${CONST_VARS.BASE_URL}pokemon?limit=${params.limit}&offset=${params.offset}`);
             setPokemons(res.data.results)
         })();
     }, []);
