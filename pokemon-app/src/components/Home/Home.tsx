@@ -19,8 +19,7 @@ const Home = () => {
         (<div className="text-center">{CONST_VARS.NO_POKEMONS_TEXT}</div>)
 
     return (
-        <div className="container">
-            <h4 className="center">Home</h4>
+        <div className="home">
             {listMarkup}
         </div>
     )
