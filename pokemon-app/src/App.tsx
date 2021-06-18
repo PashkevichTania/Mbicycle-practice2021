@@ -6,11 +6,13 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import PokemonPage from "./components/PokemonPage/PokemonePage";
 import CONST_VARS from "./const";
+import Navbar from "./components/NavBar/NavBar";
 
 function App() {
     return (
         <Router>
             <div className="App">
+                <Navbar />
                 <Switch>
                     <Route exact path={CONST_VARS.HOME_PATH} component={Home}/>
                     <Route path={CONST_VARS.POKEMON_PATH} component={PokemonPage}/>
