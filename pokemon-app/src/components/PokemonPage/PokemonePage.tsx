@@ -30,7 +30,7 @@ const PokemonPage = (props: { match: { params: { pokemon_id: string; }; }; } ) =
     const pokemonImage = `${CONST_VARS.IMG_URL}${id}.png`
 
     const res = pokemon ? (
-        <div className="container">
+        <div className="PokemonCard">
             <h4 className="center">Pokemon Page</h4>
             <img src={pokemonImage} alt="pokemon image"/>
             <div>ID: {pokemon.id}</div>
@@ -49,7 +49,7 @@ const PokemonPage = (props: { match: { params: { pokemon_id: string; }; }; } ) =
     ): ("Pokemon not found")
 
     return (
-        <div className="PokemonCard">{res}</div>
+        <div className="pokemon-page">{res}</div>
     )
 }
 

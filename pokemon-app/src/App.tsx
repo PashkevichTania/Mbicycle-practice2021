@@ -1,8 +1,8 @@
 import React from 'react';
 import './components/Home/home.scss';
+import './components/PokemonPage/pokemonCard.scss';
 import Home from "./components/Home/Home";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import axios from "axios";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import PokemonPage from "./components/PokemonPage/PokemonePage";
 import CONST_VARS from "./const";

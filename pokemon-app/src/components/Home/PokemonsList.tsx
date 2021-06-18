@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {IPokemon} from "../../interfaces";
 
 const PokemonsList = (props: { pokemons: IPokemon[]; }) => {
-console.log(props.pokemons)
+
     const pokemons_list = props.pokemons.map((pokemon) => {
         const {name} = pokemon;
         const {url} = pokemon;
@@ -15,9 +15,8 @@ console.log(props.pokemons)
                 <div className="pokemon-card" key={id}>
                     <div className="card-body">
                         <img src={pokemonImage} alt="pokemon image"/>
-                        <p>id: {id}</p>
+                        <p>ID: {id}</p>
                         <h5 className="card-title">Name: {name}</h5>
-                        <p className="card-text"></p>
                     </div>
                 </div>
             </Link>
@@ -25,7 +24,7 @@ console.log(props.pokemons)
     })
 
     return (
-        <div>
+        <div className="cards-container">
             {pokemons_list}
         </div>
     )

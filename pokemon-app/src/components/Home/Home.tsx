@@ -15,15 +15,13 @@ const Home = () => {
     }, []);
 
     const listMarkup = pokemons.length > 0 ?
-        (<PokemonsList pokemons={pokemons} />) :
+        (<PokemonsList pokemons={pokemons}/>) :
         (<div className="text-center">No pokemons found</div>)
 
     return (
         <div className="container">
             <h4 className="center">Home</h4>
-            <div className="cards-container">
-                {listMarkup}
-            </div>
+            {listMarkup}
         </div>
     )
 }
