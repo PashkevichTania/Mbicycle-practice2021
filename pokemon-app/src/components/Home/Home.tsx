@@ -11,7 +11,6 @@ const Home = () => {
         (async () => {
             const res = await axios.get(`${CONST_VARS.BASE_URL}pokemon?limit=10&offset=200`);
             setPokemons(res.data.results)
-            console.log(res.data.results)
         })();
     }, []);
 
