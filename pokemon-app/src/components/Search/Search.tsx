@@ -16,9 +16,9 @@ const Search = ({ name }: { name: string }) => {
     }, [name]);
 
     return (
-        <div className="pokemon-page">{pokemon ? (
-            <RenderPokemonPage {...pokemon}/>
-        ) : ("Pokemon not found")}</div>
+        <div className="pokemon-page">
+            {pokemon ? (<RenderPokemonPage {...pokemon}/>) : (CONST_VARS.POKEMON_NOT_FOUND_TEXT)}
+        </div>
     )
 }
 

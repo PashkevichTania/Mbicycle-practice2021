@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import CONST_VARS from "../../const";
-import AbilitiesList from "./AbilitiesList";
-import StatsList from "./StatsList";
 import {IPokemonDetails} from "../../interfaces";
 import RenderPokemonPage from "./RenderPokemonPage";
 
@@ -19,12 +17,10 @@ const PokemonPage = (props: { match: { params: { pokemon_id: string; }; }; }) =>
 
     }, []);
 
-    const result = pokemon ? (
-        <RenderPokemonPage {...pokemon}/>
-    ) : ("Pokemon not found")
-
     return (
-        <div className="pokemon-page">{result}</div>
+        <div className="pokemon-page">
+            {pokemon ? (<RenderPokemonPage {...pokemon}/>) : (CONST_VARS.POKEMON_NOT_FOUND_TEXT)}
+        </div>
     )
 }
 

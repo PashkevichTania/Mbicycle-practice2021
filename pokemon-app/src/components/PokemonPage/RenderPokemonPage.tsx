@@ -1,7 +1,7 @@
 import React from 'react'
 import CONST_VARS from "../../const";
-import AbilitiesList from "./AbilitiesList";
-import StatsList from "./StatsList";
+import AbilitiesList from "./AbilitiesList/AbilitiesList";
+import StatsList from "./StatsList/StatsList";
 import {IPokemonDetails} from "../../interfaces";
 
 
