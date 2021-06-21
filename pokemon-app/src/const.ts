@@ -10,6 +10,7 @@ const CONST_VARS = {
     NO_POKEMONS_TEXT: 'No pokemons found',
     NO_ABILITIES_TEXT: 'No abilities',
     NO_STATS_TEXT: 'No stats',
+    SEARCH_TEXT: 'Search by pokemon name',
 }
 
 export default CONST_VARS;
