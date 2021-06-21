@@ -1,14 +1,29 @@
 .pokemon-page {
   .PokemonCard {
     margin: 5% auto;
+    padding: 15px;
     width: 500px;
     background: #366e87;
-    text-align: center;
     border: #244b5c 5px solid;
     border-radius: 15px;
 
     color: white;
     font-size: 1.6rem;
+
+    .pokemon-info {
+      display: grid;
+      grid-template-areas:
+            "info stats";
+    }
+
+    .pokemon-general-info {
+      grid-area: info;
+    }
+
+
+    .stats {
+      grid-area: stats;
+    }
 
     image {
       width: 475px;
@@ -19,5 +34,6 @@
       font-weight: 500;
     }
   }
-min-height: 100vh;
+
+  min-height: 100vh;
 }
