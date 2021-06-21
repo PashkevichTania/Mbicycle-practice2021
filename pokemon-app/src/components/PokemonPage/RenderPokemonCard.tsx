@@ -4,11 +4,9 @@ import {Link} from "react-router-dom";
 import {IPokemon} from "../../interfaces";
 
 const PokemonCard = ({pokemon}: { pokemon: IPokemon; }) => {
-
         const {name} = pokemon;
         const {url} = pokemon;
-        // TODO simplify
-        const id = ((url.match(/\/\d+\//))?.toString().match(/\d+/)?.toString())
+        const id = (url.match(/\/(\d+?)\//)![1].toString())
         const pokemonImage = `${CONST_VARS.IMG_URL}${id}.png`
         return (
             <Link to={`/pokemon/${id}`}>

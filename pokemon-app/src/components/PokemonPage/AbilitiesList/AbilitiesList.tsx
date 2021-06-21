@@ -2,8 +2,8 @@ import React from "react";
 import {IAbility} from "../../../interfaces";
 import RenderAbility from "./RenderAbility";
 
-const AbilitiesList = (props: { abilities: IAbility[]; }) => {
-    const pokemons_list = props.abilities.map((a) => {
+const AbilitiesList = ({abilities}: { abilities: IAbility[]; }) => {
+    const pokemons_list = abilities.map((a) => {
         return <RenderAbility ability={a} key={a.ability.name}/>;
     })
 
