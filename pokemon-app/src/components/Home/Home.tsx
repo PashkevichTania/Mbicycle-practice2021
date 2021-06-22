@@ -1,28 +1,36 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import PokemonsList from "./PokemonsList";
-import {IPokemon} from "../../interfaces";
+import {IPokemonDetails} from "../../interfaces";
 import {API_PATH, WARNINGS} from "../../const";
 
 
 let params = {
     limit: 10,
-    offset: 200,
+    offset: 1000,
 }
-params.offset = Math.floor(Math.random() * 200)
+params.offset = Math.floor(Math.random() * 1000)
 
 const Home = () => {
-    const [pokemons, setPokemons] = useState<IPokemon[]>([])
+    const [store, setStore] = useState<IPokemonDetails[]>([])
+
     useEffect(() => {
         (async () => {
             const res = await axios.get(`${API_PATH.BASE}pokemon?limit=${params.limit}&offset=${params.offset}`);
-            setPokemons(res.data.results)
-        })();
+            res.data.results.forEach((pokemon: { url: string; }) => {
+                (async () => {
+                    const {url} = pokemon;
+                    const res = await axios.get(url);
+                    setStore((element) => [...element, res.data])
+                })();
+            })
+        })()
     }, []);
+
 
     return (
         <div className="home">
-            {pokemons.length > 0 ? (<PokemonsList pokemons={pokemons} />) :
+            {store.length > 0 ? (<PokemonsList pokemonsDetails={store}/>) :
                 (<div className="text-center">{WARNINGS.NO_POKEMONS}</div>)}
         </div>
     )

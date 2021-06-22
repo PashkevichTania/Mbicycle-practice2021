@@ -18,13 +18,13 @@ export interface IStat {
 
 export interface IPokemonDetails {
     abilities: IAbility[],
-    base_experience: number,
+    base_experience?: number,
     height: number,
     id: number,
-    is_default: boolean,
+    is_default?: boolean,
     name: string,
-    order: number,
-    species: {
+    order?: number,
+    species?: {
         name: string,
         url: string,
     }

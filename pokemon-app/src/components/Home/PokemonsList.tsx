@@ -1,12 +1,12 @@
 import React from "react";
-import {IPokemon} from "../../interfaces";
+import {IPokemonDetails} from "../../interfaces";
 import PokemonCard from "../PokemonPage/RenderPokemonCard";
 
-const PokemonsList = ({pokemons}: { pokemons: IPokemon[]; }) => {
+const PokemonsList = ({pokemonsDetails}: { pokemonsDetails: IPokemonDetails[]; }) => {
 
-    const pokemons_list = pokemons.map((pokemon) => {
+    const pokemons_list = pokemonsDetails.map((pokemonDetails) => {
         return (
-            <PokemonCard pokemon={pokemon} key={pokemon.name}/>
+            <PokemonCard pokemonDetails={pokemonDetails} key={pokemonDetails.name}/>
         );
     })
 

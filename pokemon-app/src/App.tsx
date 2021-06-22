@@ -9,6 +9,7 @@ import PokemonPage from "./components/PokemonPage/PokemonePage";
 import Navbar from "./components/NavBar/NavBar";
 import SearchPage from "./components/Search/SearchPage";
 import {APP_PATH} from "./const";
+import PokemonCard from "./components/PokemonPage/RenderPokemonCard";
 
 function App() {
     return (
