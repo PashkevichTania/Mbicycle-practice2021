@@ -2,6 +2,7 @@ import React from 'react';
 import './components/Home/home.scss';
 import './components/PokemonPage/pokemonCard.scss';
 import './components/NavBar/nav.scss';
+import './components/Search/search.scss';
 import Home from "./components/Home/Home";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
@@ -9,7 +10,6 @@ import PokemonPage from "./components/PokemonPage/PokemonePage";
 import Navbar from "./components/NavBar/NavBar";
 import SearchPage from "./components/Search/SearchPage";
 import {APP_PATH} from "./const";
-import PokemonCard from "./components/PokemonPage/RenderPokemonCard";
 
 function App() {
     return (

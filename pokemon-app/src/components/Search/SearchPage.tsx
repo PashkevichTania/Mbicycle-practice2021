@@ -12,11 +12,13 @@ const SearchPage = () => {
 
     return (
         <div>
-            <div className="container">
+            <div className="search-container container">
                 <h4 className="center">{LABELS.SEARCH}</h4>
                 <form action="submit" onSubmit={onSubmitHandler}>
-                    <input type="text" />
-                    <button type="submit">search!</button>
+                    <div className="input-group mb-3">
+                        <input type="text" className="form-control"/>
+                        <button type="submit" className="btn btn-outline-secondary">search!</button>
+                    </div>
                 </form>
                 <div id="search-result"></div>
                 {name ? <Search name={name}/> : <div></div>}
