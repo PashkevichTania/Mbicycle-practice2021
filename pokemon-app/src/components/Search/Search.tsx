@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react'
-import CONST_VARS from "../../const";
 import {IPokemonDetails} from "../../interfaces";
 import axios from "axios";
 import RenderPokemonPage from "../PokemonPage/RenderPokemonPage";
+import {API_PATH, WARNINGS} from "../../const";
 
 
 const Search = ({ name }: { name: string }) => {
     const [pokemon, setPokemon] = useState<IPokemonDetails>()
     useEffect(() => {
         (async () => {
-            const res = await axios.get(`${CONST_VARS.BASE_URL}pokemon/${name}/`);
+            const res = await axios.get(`${API_PATH.BASE}pokemon/${name}/`);
             setPokemon(res.data)
             console.log(res)
         })();
@@ -17,7 +17,7 @@ const Search = ({ name }: { name: string }) => {
 
     return (
         <div className="pokemon-page">
-            {pokemon ? (<RenderPokemonPage {...pokemon}/>) : (CONST_VARS.POKEMON_NOT_FOUND_TEXT)}
+            {pokemon ? (<RenderPokemonPage {...pokemon}/>) : (WARNINGS.NO_POKEMON)}
         </div>
     )
 }

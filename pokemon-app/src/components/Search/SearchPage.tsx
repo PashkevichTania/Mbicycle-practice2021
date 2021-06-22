@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react'
-import CONST_VARS from "../../const";
+import React, {useState} from 'react'
 import Search from "./Search";
+import {LABELS} from "../../const";
 
 const SearchPage = () => {
     const [name, setName] = useState('');
@@ -13,13 +13,13 @@ const SearchPage = () => {
     return (
         <div>
             <div className="container">
-                <h4 className="center">{CONST_VARS.SEARCH_TEXT}</h4>
+                <h4 className="center">{LABELS.SEARCH}</h4>
                 <form action="submit" onSubmit={onSubmitHandler}>
                     <input type="text" />
                     <button type="submit">search!</button>
                 </form>
                 <div id="search-result"></div>
-                {name ? <Search name={name}/> : <div>no pokemon</div>}
+                {name ? <Search name={name}/> : <div></div>}
             </div>
         </div>
     )

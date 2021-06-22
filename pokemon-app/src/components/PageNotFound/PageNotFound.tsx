@@ -1,11 +1,11 @@
 import React from 'react'
-import CONST_VARS from "../../const";
+import {WARNINGS} from "../../const";
 
 const PageNotFound = () => {
     return (
         <div>
             <div className="container">
-                <h4 className="center">{CONST_VARS.NOT_FOUND_PAGE_TEXT}</h4>
+                <h4 className="center">{WARNINGS.NO_PAGE}</h4>
             </div>
         </div>
     )
