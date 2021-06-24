@@ -9,7 +9,7 @@ const PokemonPage = (props: { location: React.SetStateAction<IPokemonDetails | u
     const [pokemon, setPokemon] = useState<IPokemonDetails>()
     useEffect(() => {
         setPokemon(props.location);
-    }, []);
+    }, [props.location]);
 
     return (
         <div className="pokemon-page">

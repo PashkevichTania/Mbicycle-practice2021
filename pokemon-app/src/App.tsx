@@ -10,7 +10,7 @@ import './components/Search/search.scss';
 
 import Home from "./components/Home/Home";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-import PokemonPage from "./components/PokemonPage/PokemonePage";
+import PokemonPage from "./components/PokemonPage/PokemonPage";
 import Navbar from "./components/NavBar/NavBar";
 import SearchPage from "./components/Search/SearchPage";
 import {APP_PATH} from "./const";

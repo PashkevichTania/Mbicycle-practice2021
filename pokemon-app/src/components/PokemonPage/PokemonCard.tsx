@@ -24,7 +24,7 @@ const PokemonCard = ({pokemonDetails}: { pokemonDetails: IPokemonDetails; }) => 
         <Link to={params}>
             <div className="pokemon-card">
                 <div className="card-body">
-                    <img src={pokemonImage} alt="pokemon image"/>
+                    <img src={pokemonImage} alt="pokemon"/>
                     <p>ID: {params.id}</p>
                     <h5 className="card-title">Name: {params.name}</h5>
                 </div>

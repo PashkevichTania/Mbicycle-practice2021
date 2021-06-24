@@ -14,7 +14,7 @@ const RenderPokemonPage = (pokemon: IPokemonDetails) => {
             pokemon ? (
                 <div className="PokemonCard">
                     <h4 className="center">Pokemon Page</h4>
-                    <img src={`${API_PATH.IMG}${pokemon.id}.png`} alt="pokemon image"/>
+                    <img src={`${API_PATH.IMG}${pokemon.id}.png`} alt="pokemon"/>
                     <div className="pokemon-info">
                         <div className="pokemon-general-info">
                             <div>ID: {pokemon.id}</div>

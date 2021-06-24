@@ -12,12 +12,13 @@ const initialState:IInint = {
 }
 
 
-export const pokemonReducer = (state = initialState, action: { type: string; payload: any }) => {
+export const pokemonReducer = (state = initialState,
+                               action: { type: string; payload: IPokemonDetails[] | IPokemon[] }) => {
     switch (action.type) {
         case FETCH_POKEMONS:
-            return { ...state, pokemons: action.payload }
+            return { ...state, pokemons: action.payload };
         case FETCH_POKEMONS_DETAILS:
-            return { ...state, pokemonsDetails: [...state.pokemonsDetails, action.payload]}
-        default: return state
+            return { ...state, pokemonsDetails: [...state.pokemonsDetails, action.payload]};
+        default: return state;
     }
 }
