@@ -1,37 +1,24 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+import React from 'react'
+import {useSelector} from "react-redux";
+import {RootState} from "../../redux/rootReducer";
 import PokemonsList from "./PokemonsList";
-import {IPokemonDetails} from "../../interfaces";
-import {API_PATH, WARNINGS} from "../../const";
+import Loader from './Loader'
 
 
-let params = {
-    limit: 10,
-    offset: 1000,
-}
-params.offset = Math.floor(Math.random() * 1000)
 
 const Home = () => {
-    const [store, setStore] = useState<IPokemonDetails[]>([])
 
-    useEffect(() => {
-        (async () => {
-            const res = await axios.get(`${API_PATH.BASE}pokemon?limit=${params.limit}&offset=${params.offset}`);
-            res.data.results.forEach((pokemon: { url: string; }) => {
-                (async () => {
-                    const {url} = pokemon;
-                    const res = await axios.get(url);
-                    setStore((element) => [...element, res.data])
-                })();
-            })
-        })()
-    }, []);
+    let loading = useSelector((state: RootState) => {
+        return state.app.loading;
+    });
 
+    if (loading) {
+        return <Loader />
+    }
 
     return (
         <div className="home">
-            {store.length > 0 ? (<PokemonsList pokemonsDetails={store}/>) :
-                (<div className="text-center">{WARNINGS.NO_POKEMONS}</div>)}
+            <PokemonsList />
         </div>
     )
 }

@@ -1,10 +1,16 @@
 import React from "react";
+import {useSelector} from 'react-redux'
 import {IPokemonDetails} from "../../interfaces";
-import PokemonCard from "../PokemonPage/RenderPokemonCard";
+import PokemonCard from "../PokemonPage/PokemonCard";
+import {RootState} from "../../redux/rootReducer";
 
-const PokemonsList = ({pokemonsDetails}: { pokemonsDetails: IPokemonDetails[]; }) => {
+const PokemonsList = () => {
 
-    const pokemons_list = pokemonsDetails.map((pokemonDetails) => {
+    let pokemonsDetails = useSelector((state: RootState) => {
+        return state.pokemon.pokemonsDetails;
+    });
+
+    const pokemons_list = pokemonsDetails.map((pokemonDetails: IPokemonDetails) => {
         return (
             <PokemonCard pokemonDetails={pokemonDetails} key={pokemonDetails.name}/>
         );
