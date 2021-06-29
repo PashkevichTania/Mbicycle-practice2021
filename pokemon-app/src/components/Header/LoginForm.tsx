@@ -6,7 +6,7 @@ const LoginForm = () => {
     const dispatch = useDispatch()
     const myStorage = window.localStorage;
 
-    const loginHandler = (event: { preventDefault: () => void; }) => {
+    const loginHandler = (event: React.FormEvent) => {
         event.preventDefault();
         const loginForm = document.getElementById('loginForm') as HTMLFormElement;
 
