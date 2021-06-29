@@ -19,7 +19,7 @@ const Logout = () => {
     }
 
     return (
-        <div id="user-info">
+        <div id="user-info" style={{display: 'none'}}>
             <p className="user__firstName">{currentUser?.firstName}</p>
             <p className="user__lastName">{currentUser?.lastName}</p>
             <p className="user__email">{currentUser?.email}</p>
