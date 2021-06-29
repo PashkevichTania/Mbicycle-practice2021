@@ -1,4 +1,12 @@
-import {ADD_POKEMON, ADD_USER, DELETE_USER, GetPokemonsActionType, HIDE_LOADER, SHOW_LOADER} from "./types";
+import {
+    ADD_POKEMON,
+    ADD_USER,
+    DELETE_POKEMON,
+    DELETE_USER,
+    GetPokemonsActionType,
+    HIDE_LOADER,
+    SHOW_LOADER
+} from "./types";
 import axios from "axios";
 import {API_PATH} from "../const";
 import {IUser} from "../interfaces";
@@ -49,5 +57,11 @@ export function fetchPokemon() {
             })();
         })
         dispatch(hideLoader())
+    }
+}
+
+export function deletePokemons() {
+    return {
+        type: DELETE_POKEMON
     }
 }

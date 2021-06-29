@@ -1,4 +1,4 @@
-import {ADD_POKEMON, GetPokemonsActionType} from './types'
+import {ADD_POKEMON, DELETE_POKEMON, GetPokemonsActionType} from './types'
 import {IPokemonDetails} from "../interfaces";
 
 interface IInint{
@@ -15,6 +15,8 @@ export const pokemonReducer = (state = initialState,
     switch (action.type) {
         case ADD_POKEMON:
             return { pokemonsDetails: state.pokemonsDetails.concat(action.payload)};
+        case DELETE_POKEMON:
+            return {pokemonsDetails: []}
         default: return state;
     }
 }

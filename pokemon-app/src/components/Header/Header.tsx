@@ -1,9 +1,13 @@
 import React from 'react'
 import {NavLink, withRouter} from "react-router-dom";
 import Login from "./Login";
+import AdminPanel from "../Home/AdminPanel";
+import {useSelector} from "react-redux";
+import {RootState} from "../../redux/rootReducer";
 
 const Header = () => {
 
+    const currentUser = useSelector((state: RootState) =>state.user.user)
 
     return (
         <header id="header">
@@ -24,6 +28,7 @@ const Header = () => {
                     </ul>
                 </div>
             </nav>
+            {currentUser?.firstName === 'admin' ? <AdminPanel /> : null}
             <Login />
         </header>
 )

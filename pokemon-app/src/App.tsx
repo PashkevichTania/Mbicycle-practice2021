@@ -17,6 +17,7 @@ import {APP_PATH} from "./const";
 import LoginForm from "./components/Header/LoginForm";
 import {IUser} from "./interfaces";
 import Logout from "./components/Header/Logout";
+import AdminPanel from "./components/Home/AdminPanel";
 
 
 function App() {
@@ -26,14 +27,10 @@ function App() {
         dispatch(fetchPokemon());
     }, [dispatch]);
 
-    const [user, setUser] = useState<IUser | null>(null);
-
     function getUser() {
         const retrievedUser = localStorage.getItem('currentUser');
         if (retrievedUser) {
-            setUser(JSON.parse(retrievedUser))
             dispatch(addUser(JSON.parse(retrievedUser)))
-            console.log(user)
         }
     }
     useEffect(()=>{
