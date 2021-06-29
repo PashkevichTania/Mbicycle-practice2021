@@ -3,22 +3,17 @@ import {useSelector} from 'react-redux'
 import {IPokemonDetails} from "../../interfaces";
 import PokemonCard from "../PokemonPage/PokemonCard";
 import {RootState} from "../../redux/rootReducer";
+import {pokemonDetailsSelector} from "../../redux/selectors";
 
 const PokemonsList = () => {
 
-    let pokemonsDetails:IPokemonDetails[] = useSelector((state: RootState) => {
-        return  state.pokemon.pokemonsDetails;
-    });
-
-    const pokemons_list = pokemonsDetails.map((pokemonDetails: IPokemonDetails) => {
-        return (
-            <PokemonCard pokemonDetails={pokemonDetails} key={pokemonDetails.name}/>
-        );
-    })
+    let pokemonsDetails:IPokemonDetails[] = useSelector(pokemonDetailsSelector);
 
     return (
         <div className="cards-container">
-            {pokemons_list}
+            {pokemonsDetails.map((pokemonDetails: IPokemonDetails) =>
+                (<PokemonCard pokemonDetails={pokemonDetails} key={pokemonDetails.name}/>)
+            )}
         </div>
     )
 }
