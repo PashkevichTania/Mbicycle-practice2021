@@ -1,30 +1,31 @@
-import React, {useEffect, useState} from 'react';
-import {IUser} from "../../interfaces";
+import React from 'react';
+import {RootState} from "../../redux/rootReducer";
+import {useSelector} from "react-redux";
 
 const Login = () => {
 
-    const myStorage = window.localStorage;
+   const currentUser = useSelector((state: RootState) =>state.user.user)
 
-    const [user, setUser] = useState<IUser | null>(null);
-
-    useEffect(() =>{
-        const retrievedUser = localStorage.getItem('currentUser');
-        if (retrievedUser){
-            setUser(JSON.parse(retrievedUser))
-            console.log(user)
-        }
-    }, [myStorage])
-
-    const openFormHandler = () =>{
+    const openFormHandler = () => {
         const formContainer = document.getElementById('myForm');
         if (formContainer){
             formContainer.style.display='block';
         }
     }
+    const toggleUserInfo = () =>{
+       const userInfo = document.getElementById('user-info')
+        if (userInfo){
+            userInfo.style.display === 'none'?
+                userInfo.style.display = 'flex':
+                userInfo.style.display = 'none';
+        }
+    }
 
     return (
         <div>
-            {user ? (user.firstName) : (<button onClick={openFormHandler}>login</button>)}
+            {currentUser ?
+                (<img onClick={toggleUserInfo} className="userava" src="./user.svg" alt="user logo" />):
+                (<button onClick={openFormHandler}>login</button>)}
         </div>
     )
 };

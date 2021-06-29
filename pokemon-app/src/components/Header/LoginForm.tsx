@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useDispatch} from "react-redux";
 import {addUser} from "../../redux/actions";
-import {IUser} from "../../interfaces";
 
 const LoginForm = () => {
     const dispatch = useDispatch()

@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {fetchPokemon} from "./redux/actions";
+import {addUser, fetchPokemon} from "./redux/actions";
 
 import './components/Home/home.scss';
 import './components/PokemonPage/pokemonCard.scss';
@@ -15,6 +15,8 @@ import Header from "./components/Header/Header";
 import SearchPage from "./components/Search/SearchPage";
 import {APP_PATH} from "./const";
 import LoginForm from "./components/Header/LoginForm";
+import {IUser} from "./interfaces";
+import Logout from "./components/Header/Logout";
 
 
 function App() {
@@ -23,6 +25,20 @@ function App() {
     useEffect(() => {
         dispatch(fetchPokemon());
     }, [dispatch]);
+
+    const [user, setUser] = useState<IUser | null>(null);
+
+    function getUser() {
+        const retrievedUser = localStorage.getItem('currentUser');
+        if (retrievedUser) {
+            setUser(JSON.parse(retrievedUser))
+            dispatch(addUser(JSON.parse(retrievedUser)))
+            console.log(user)
+        }
+    }
+    useEffect(()=>{
+        getUser()
+    },[])
 
     return (
         <Router>
@@ -34,6 +50,7 @@ function App() {
                     <Route path={APP_PATH.SEARCH} component={SearchPage}/>
                     <Route component={PageNotFound} />
                 </Switch>
+                <Logout />
                 <LoginForm />
             </div>
         </Router>

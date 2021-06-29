@@ -1,7 +1,11 @@
 import {ADD_USER, DELETE_USER} from './types'
 import {IUser} from "../interfaces";
 
-const initialState = {
+interface IUserState{
+    user:IUser | null
+}
+
+const initialState:IUserState = {
     user: null,
 }
 

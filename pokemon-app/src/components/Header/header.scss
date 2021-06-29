@@ -114,3 +114,43 @@ input:invalid {
 input:focus:invalid {
   outline: none;
 }
+
+
+.userava{
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+#user-info {
+  display: none;
+
+  flex-direction: column;
+  justify-content: center;
+
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  z-index: 300;
+
+  color: white;
+  font-size: 1.2rem;
+
+  background-color: rgba(10, 39, 69, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  min-width: 200px;
+  min-height: 150px;
+  padding: 20px;
+
+
+  .logout {
+    grid-area: logout;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 0.6);
+  }
+}
