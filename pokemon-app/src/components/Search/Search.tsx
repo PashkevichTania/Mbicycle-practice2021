@@ -11,7 +11,6 @@ const Search = ({ name }: { name: string }) => {
         (async () => {
             const res = await axios.get(`${API_PATH.BASE}pokemon/${name}/`);
             setPokemon(res.data)
-            console.log(res)
         })();
     }, [name]);
 

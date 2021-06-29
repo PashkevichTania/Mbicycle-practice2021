@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {WARNINGS} from "../../const";
-import {IPokemonDetails} from "../../interfaces";
 import RenderPokemonPage from "./RenderPokemonPage";
+import {createSelector} from "reselect";
 import {useSelector} from "react-redux";
 import {RootState} from "../../redux/rootReducer";
 
@@ -11,28 +11,22 @@ interface Iprops{
 
 const PokemonPage = (props: Iprops) => {
     const id = props.match.params.pokemon_id
+    console.log('id='+id)
     console.log(props)
-    const [pokemon, setPokemon] = useState<IPokemonDetails>()
+    //const [pokemon, setPokemon] = useState<IPokemonDetails>()
 
-    export const getPokemonByIDSelector = (id: number):
-        OutputSelector<Pokemon, Pokemon, (res: Pokemon) => Pokemon> => createSelector(
-        selectAllPokemonsSaga,
-        pokemons => pokemons.find((pokemon: Pokemon) => {
-            if (isNaN(id)) return pokemon.id === 0;
-            return pokemon.id === id;
-        })
-    );
+    const selectNumCompletedTodos = createSelector(
+        (state: RootState) => state.pokemon.pokemonsDetails,
+        (pokemons) => pokemons.filter((elem) => elem.id == id)
+    )
 
-    let pokemonsDetails: IPokemonDetails = useSelector((state: RootState) => {
-        return  state.pokemon.pokemonsDetails[1];
-    });
-    useEffect(() => {
-        console.log(pokemonsDetails)
-    }, [pokemonsDetails]);
+    const selectedPokemon = useSelector(selectNumCompletedTodos)
+    console.log('selectedPokemon')
+    console.log(selectedPokemon)
 
     return (
         <div className="pokemon-page">
-            {pokemon ? (<RenderPokemonPage {...pokemon}/>) : (WARNINGS.NO_POKEMON)}
+            {selectedPokemon[0] ? (<RenderPokemonPage {...selectedPokemon[0]}/>) : (WARNINGS.NO_POKEMON)}
         </div>
     )
 }

@@ -1,6 +1,7 @@
-export interface IPokemon {
-    name: string;
-    url: string;
+export interface IUser {
+    firstName: string;
+    lastName: string;
+    email: string;
 }
 
 export interface IAbility {

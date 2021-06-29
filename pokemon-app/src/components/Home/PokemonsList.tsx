@@ -7,7 +7,7 @@ import {RootState} from "../../redux/rootReducer";
 const PokemonsList = () => {
 
     let pokemonsDetails:IPokemonDetails[] = useSelector((state: RootState) => {
-        return  state.pokemon["pokemonsDetails"];
+        return  state.pokemon.pokemonsDetails;
     });
 
     const pokemons_list = pokemonsDetails.map((pokemonDetails: IPokemonDetails) => {

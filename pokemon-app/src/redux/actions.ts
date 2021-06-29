@@ -1,6 +1,7 @@
-import {ADD_POKEMON, GetPokemonsActionType, HIDE_LOADER, SHOW_LOADER} from "./types";
+import {ADD_POKEMON, ADD_USER, GetPokemonsActionType, HIDE_LOADER, SHOW_LOADER} from "./types";
 import axios from "axios";
 import {API_PATH} from "../const";
+import {IUser} from "../interfaces";
 
 export function showLoader() {
     return {
@@ -11,6 +12,15 @@ export function showLoader() {
 export function hideLoader() {
     return {
         type: HIDE_LOADER
+    }
+}
+
+export function addUser(user: IUser) {
+    return (dispatch: (arg0: { type: string; payload: IUser; }) => void) => {
+        dispatch({
+            type: ADD_USER,
+            payload: user
+        })
     }
 }
 
