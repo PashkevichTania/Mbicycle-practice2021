@@ -1,13 +1,13 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {deletePokemons, fetchPokemon} from "../../redux/actions";
+import {deletePokemons, fetchPokemons} from "../../redux/actions";
 
 const AdminPanel = () => {
     const dispatch = useDispatch()
 
     const shuffle = () =>{
         dispatch(deletePokemons())
-        dispatch(fetchPokemon())
+        dispatch(fetchPokemons())
     }
 
     return (

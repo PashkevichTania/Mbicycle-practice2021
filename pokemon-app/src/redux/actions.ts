@@ -1,7 +1,7 @@
 import {
-    ADD_POKEMON,
+    ADD_POKEMONS,
     ADD_USER,
-    DELETE_POKEMON,
+    DELETE_POKEMONS,
     DELETE_USER,
     GetPokemonsActionType,
     HIDE_LOADER,
@@ -39,7 +39,7 @@ export function addUser(user: IUser) {
 }
 
 
-export function fetchPokemon() {
+export function fetchPokemons() {
     let params = {
         limit: 10,
         offset: 1000,
@@ -53,7 +53,7 @@ export function fetchPokemon() {
             (async () => {
                 const {url} = pokemon;
                 const res = await axios.get(url);
-                dispatch({ type: ADD_POKEMON, payload: res.data})
+                dispatch({ type: ADD_POKEMONS, payload: res.data})
             })();
         })
         dispatch(hideLoader())
@@ -62,6 +62,6 @@ export function fetchPokemon() {
 
 export function deletePokemons() {
     return {
-        type: DELETE_POKEMON
+        type: DELETE_POKEMONS
     }
 }

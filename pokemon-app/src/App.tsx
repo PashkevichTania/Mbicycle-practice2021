@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {addUser, fetchPokemon} from "./redux/actions";
+import {addUser, fetchPokemons} from "./redux/actions";
 
 import './components/Home/home.scss';
 import './components/PokemonPage/pokemonCard.scss';
@@ -15,16 +15,14 @@ import Header from "./components/Header/Header";
 import SearchPage from "./components/Search/SearchPage";
 import {APP_PATH} from "./const";
 import LoginForm from "./components/Header/LoginForm";
-import {IUser} from "./interfaces";
 import Logout from "./components/Header/Logout";
-import AdminPanel from "./components/Home/AdminPanel";
 
 
 function App() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchPokemon());
+        dispatch(fetchPokemons());
     }, [dispatch]);
 
     function getUser() {
