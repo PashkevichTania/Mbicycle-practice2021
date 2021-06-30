@@ -42,9 +42,9 @@ export function addUser(user: IUser) {
 export function fetchPokemons() {
     let params = {
         limit: 10,
-        offset: 1000,
+        offset: 500,
     }
-    params.offset = Math.floor(Math.random() * 1000)
+    params.offset = Math.floor(Math.random() * 900)
 
     return async (dispatch: (action: GetPokemonsActionType | { type: string; }) => void) => {
         dispatch(showLoader())

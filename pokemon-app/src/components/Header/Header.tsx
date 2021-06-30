@@ -1,13 +1,13 @@
 import React from 'react'
 import {NavLink, withRouter} from "react-router-dom";
+import {useSelector} from "react-redux";
 import Login from "./Login";
 import AdminPanel from "../Home/AdminPanel";
-import {useSelector} from "react-redux";
-import {RootState} from "../../redux/rootReducer";
+import {userSelector} from "../../redux/selectors";
 
 const Header = () => {
 
-    const currentUser = useSelector((state: RootState) =>state.user.user)
+    const currentUser = useSelector(userSelector)
 
     return (
         <header id="header">

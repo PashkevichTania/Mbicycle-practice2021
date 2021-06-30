@@ -1,8 +1,7 @@
 import React from "react";
 import {useSelector} from 'react-redux'
 import {IPokemonDetails} from "../../interfaces";
-import PokemonCard from "../PokemonPage/PokemonCard";
-import {RootState} from "../../redux/rootReducer";
+import PokemonCard from "./PokemonCard";
 import {pokemonDetailsSelector} from "../../redux/selectors";
 
 const PokemonsList = () => {

@@ -1,12 +1,12 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../../redux/rootReducer";
 import {deleteUser} from "../../redux/actions";
+import {userSelector} from "../../redux/selectors";
 
 const Logout = () => {
     const dispatch = useDispatch()
 
-    const currentUser = useSelector((state: RootState) => state.user.user)
+    const currentUser = useSelector(userSelector)
 
     const logoutHandler = () => {
         localStorage.clear()

@@ -1,10 +1,10 @@
 import React from 'react';
-import {RootState} from "../../redux/rootReducer";
 import {useSelector} from "react-redux";
+import {userSelector} from "../../redux/selectors";
 
 const Login = () => {
 
-   const currentUser = useSelector((state: RootState) =>state.user.user)
+   const currentUser = useSelector(userSelector)
 
     const openFormHandler = () => {
         const formContainer = document.getElementById('myForm');
@@ -29,6 +29,5 @@ const Login = () => {
         </div>
     )
 };
-
 
 export default Login;

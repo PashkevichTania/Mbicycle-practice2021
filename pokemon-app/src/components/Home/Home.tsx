@@ -12,7 +12,7 @@ const Home = () => {
     return loading ? (<Loader/>) :
         (
             <div className="home">
-                <PokemonsList/>
+                <PokemonsList />
             </div>
         )
 }

@@ -1,9 +1,7 @@
 import React from 'react'
 import {WARNINGS} from "../../const";
 import RenderPokemonPage from "./RenderPokemonPage";
-import {createSelector} from "reselect";
 import {useSelector} from "react-redux";
-import {RootState} from "../../redux/rootReducer";
 import {pokemonIDSelector} from "../../redux/selectors";
 
 interface Iprops{
