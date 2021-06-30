@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {IPokemonDetails} from "../../interfaces";
 
 const PokemonCard = ({pokemonDetails}: { pokemonDetails: IPokemonDetails; }) => {
-
+    console.log('render card')
     const params = {
         pathname: `/pokemon/${pokemonDetails.id}`,
     }
@@ -24,4 +24,4 @@ const PokemonCard = ({pokemonDetails}: { pokemonDetails: IPokemonDetails; }) => 
     );
 }
 
-export default PokemonCard;
+export default React.memo(PokemonCard);
