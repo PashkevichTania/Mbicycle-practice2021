@@ -8,6 +8,7 @@ export const APP_PATH = {
     HOME: '/',
     POKEMON: '/pokemon/:pokemon_id',
     SEARCH: '/search/',
+    TEST: '/test/',
 }
 
 export const WARNINGS = {

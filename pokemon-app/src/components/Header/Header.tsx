@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import Login from "./Login";
 import AdminPanel from "../Home/AdminPanel";
 import {userSelector} from "../../redux/selectors";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
 
@@ -25,11 +26,15 @@ const Header = () => {
                         <li>
                             <NavLink className="nav-item nav-link" exact to="/search/">Search</NavLink>
                         </li>
+                        <li>
+                            <NavLink className="nav-item nav-link" exact to="/test/">Test</NavLink>
+                        </li>
                     </ul>
                 </div>
             </nav>
             {currentUser?.firstName === 'admin' ? <AdminPanel /> : null}
             <Login />
+            <ThemeToggle />
         </header>
 )
 }
