@@ -51,6 +51,7 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7",
     "@types/react-virtualized": "^9.21.11",
+    "masonic": "^3.4.1",
     "redux-devtools-extension": "^2.13.9"
   }
 }

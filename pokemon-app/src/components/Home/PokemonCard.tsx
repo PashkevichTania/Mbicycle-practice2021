@@ -3,8 +3,9 @@ import {API_PATH} from "../../const";
 import {Link} from "react-router-dom";
 import {IPokemonDetails} from "../../interfaces";
 
-const PokemonCard = ({pokemonDetails}: { pokemonDetails: IPokemonDetails; }) => {
+const PokemonCard = ({data}: { data: IPokemonDetails; }) => {
     console.log('render card')
+    let pokemonDetails = data
     const params = {
         pathname: `/pokemon/${pokemonDetails.id}`,
     }
