@@ -22,4 +22,4 @@ const PokemonPage = (props: Iprops) => {
     )
 }
 
-export default PokemonPage;
+export default React.memo(PokemonPage);

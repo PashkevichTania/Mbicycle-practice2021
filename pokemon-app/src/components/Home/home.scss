@@ -5,11 +5,12 @@ a, a:hover, a:visited {
 }
 
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  padding: 10px;
+  margin: 0 auto;
+
+  div {
+    margin: 0 auto;
+  }
 }
 
 .pokemon-card {

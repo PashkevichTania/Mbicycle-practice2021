@@ -24,4 +24,4 @@ const ThemeToggle = () => {
     );
 };
 
-export default ThemeToggle;
+export default React.memo(ThemeToggle);

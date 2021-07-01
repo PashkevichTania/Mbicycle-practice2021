@@ -39,4 +39,4 @@ const RenderPokemonPage = (pokemon: IPokemonDetails) => {
     )
 }
 
-export default RenderPokemonPage;
+export default React.memo(RenderPokemonPage);

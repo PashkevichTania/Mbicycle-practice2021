@@ -1,10 +1,4 @@
 import React from "react";
-import  {
-    List,
-    AutoSizer,
-    CellMeasurer,
-    CellMeasurerCache,
-} from "react-virtualized";
 import {Masonry} from 'masonic'
 import {useSelector} from 'react-redux'
 import {IPokemonDetails} from "../../interfaces";
@@ -17,7 +11,6 @@ const PokemonsList = () => {
 
     return (
         <div className="cards-container">
-            <div style={{width: "100%", height: "90vh"}}>
                 <Masonry
                     // Provides the data for our grid items
                     items={pokemonsDetails}
@@ -30,11 +23,9 @@ const PokemonsList = () => {
                     // This is the grid item component
                     render={PokemonCard}
                 />
-
-            </div>
         </div>
     )
 }
 
 
-export default PokemonsList
+export default React.memo(PokemonsList)

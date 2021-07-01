@@ -39,4 +39,4 @@ const Test = () => {
     );
 };
 
-export default Test;
+export default React.memo(Test);
