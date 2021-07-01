@@ -41,7 +41,7 @@ export function addUser(user: IUser) {
 
 export function fetchPokemons() {
     let params = {
-        limit: 10,
+        limit: 100,
         offset: 500,
     }
     params.offset = Math.floor(Math.random() * 900)

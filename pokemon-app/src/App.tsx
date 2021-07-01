@@ -27,15 +27,13 @@ function App() {
         dispatch(fetchPokemons());
     }, [dispatch]);
 
-    function getUser() {
+    useEffect(() => {
+        console.log('check user')
         const retrievedUser = localStorage.getItem('currentUser');
         if (retrievedUser) {
             dispatch(addUser(JSON.parse(retrievedUser)))
         }
-    }
-    useEffect(()=>{
-        getUser()
-    },[])
+    },[dispatch])
 
     return (
         <Router>
