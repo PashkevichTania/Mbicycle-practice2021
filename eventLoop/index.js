@@ -2,6 +2,18 @@ console.log('start')
 
 setTimeout(()=>{
     console.log('timeout1 1000')
+    let p = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            console.log('promise in set timeout')
+            let data = {
+                data: 'some data'
+            }
+            resolve(data)
+        }, 1000)
+    })
+    p.then((data)=>{
+        console.log('promise in set timeout resoled, data: ' + data.data)
+    })
     setTimeout(()=>{
         console.log('timeout2 0')
     }, 0)
