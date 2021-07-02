@@ -14,4 +14,4 @@ const AbilitiesList = ({abilities}: { abilities: IAbility[]; }) => {
     )
 }
 
-export default AbilitiesList;
+export default React.memo(AbilitiesList);

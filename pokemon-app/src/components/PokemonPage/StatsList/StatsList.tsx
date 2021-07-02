@@ -16,4 +16,4 @@ const StatsList = (props: { stats: IStat[]; }) => {
     )
 }
 
-export default StatsList;
+export default React.memo(StatsList);
