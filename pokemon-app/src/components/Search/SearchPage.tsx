@@ -11,7 +11,7 @@ const SearchPage = () => {
 
 
     return (
-        <div>
+        <div id={"search"}>
             <div className="search-container container">
                 <h4 className="center">{LABELS.SEARCH}</h4>
                 <form action="submit" onSubmit={onSubmitHandler}>

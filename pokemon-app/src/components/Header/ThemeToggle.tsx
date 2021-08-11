@@ -8,12 +8,29 @@ const ThemeToggle = () => {
     const ThemeHandler = () =>{
         console.log('theme handler')
         const app = document.getElementById('App')
+        const header = document.getElementById('header')
+        const search = document.getElementById('search')
+        const searchResults = document.getElementById('search-result')
         if (!theme){
             setTheme(true)
             app!.style.backgroundColor = '#313235'
+            header!.classList.add('header__dark')
+            if (search){
+                search.classList.add('dark')
+            }
+            if (searchResults){
+                searchResults.classList.add('dark')
+            }
         }else {
             setTheme(false)
             app!.style.backgroundColor = '#fff'
+            header!.classList.remove('header__dark')
+            if (search){
+                search.classList.remove('dark')
+            }
+            if (searchResults){
+                searchResults.classList.remove('dark')
+            }
         }
     }
 

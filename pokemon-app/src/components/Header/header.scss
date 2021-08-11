@@ -4,6 +4,29 @@
   justify-content: space-evenly;
   align-items: center;
   font-size: 2rem;
+
+  background-color: #F8F9FA;
+
+
+}
+.header__dark {
+
+  background-color: #282c34!important;
+  color: white;
+
+  #nav{
+    .navbar-brand{
+      color: white;
+    }
+
+    a{
+      color: white;
+    }
+    .active{
+      color: #282c34;
+    }
+    background-color: #282c34!important;
+  }
 }
 
 .pop-up {
