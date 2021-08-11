@@ -12,7 +12,7 @@ const AdminPanel = () => {
 
     return (
         <div className="adminPanel">
-            <button onClick={shuffle}>shuffle</button>
+            <button onClick={shuffle}>Shuffle!</button>
         </div>
     );
 };

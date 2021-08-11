@@ -156,7 +156,25 @@ input:focus:invalid {
 }
 
 .adminPanel {
-  height: 50px;
-  background-color: #244b5c;
-  color: white;
+  button{
+    outline: none;
+    height: 50px;
+    background-color: #244b5c;
+    border: 1px springgreen solid;
+    color: white;
+  }
+}
+
+.form-switch{
+  label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .theme-text {
+    font-size: 1em;
+    background: linear-gradient(270deg, rgba(252,250,0,1) 0%, rgba(0,255,0,1) 21%, rgba(0,0,240,1) 41%, rgba(120,49,200,1) 65%, rgba(255,0,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

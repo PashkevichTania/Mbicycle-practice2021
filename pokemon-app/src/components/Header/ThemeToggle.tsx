@@ -19,7 +19,10 @@ const ThemeToggle = () => {
 
     return (
         <div className="form-check form-switch">
-            <input onClick={ThemeHandler} className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" />
+            <label htmlFor="flexSwitchCheckChecked" className={"theme-text"}>
+                Theme change
+                <input onClick={ThemeHandler} className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" />
+            </label>
         </div>
     );
 };
