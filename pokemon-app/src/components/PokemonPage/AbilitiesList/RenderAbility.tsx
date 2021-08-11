@@ -10,4 +10,4 @@ const RenderAbility = ({ability}: { ability: IAbility; }) => {
         );
 }
 
-export default RenderAbility;
+export default React.memo(RenderAbility);

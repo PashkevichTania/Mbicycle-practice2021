@@ -13,4 +13,4 @@ const RenderStat = ({stat}: {stat: IStat;}) => {
 
 }
 
-export default RenderStat;
+export default React.memo(RenderStat);
